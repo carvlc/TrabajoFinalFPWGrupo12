@@ -1,6 +1,8 @@
+import Inicio from "./reactComponents/Inicio";
+
 function AppJuegoImagenes(){
     return(
-        <h1>Aqui va el juego en ingles de imagenes para niños </h1>
+        <Inicio></Inicio>
     )
 }
 

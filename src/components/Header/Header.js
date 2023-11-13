@@ -16,7 +16,7 @@ function Header() {
             <Nav.Link href="/Nave">Nave Espacial</Nav.Link>
             <Nav.Link href="/Tareas">Lista de Tareas</Nav.Link>
             <Nav.Link href="/JuegoImagenes">Juego Imagenes</Nav.Link> */}
-            <Nav.Link href="proyectos">Proyectos</Nav.Link>
+            <Nav.Link href="/Proyectos">Proyectos</Nav.Link>
             <Nav.Link href="/AboutUs">About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
