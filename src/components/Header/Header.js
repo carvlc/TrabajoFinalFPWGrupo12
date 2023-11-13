@@ -11,11 +11,6 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Inicio</Nav.Link>
-            {/* <Nav.Link href="/Comparador">Comparador de Precios</Nav.Link>
-            <Nav.Link href="/Dude">Dude</Nav.Link>
-            <Nav.Link href="/Nave">Nave Espacial</Nav.Link>
-            <Nav.Link href="/Tareas">Lista de Tareas</Nav.Link>
-            <Nav.Link href="/JuegoImagenes">Juego Imagenes</Nav.Link> */}
             <Nav.Link href="/Proyectos">Proyectos</Nav.Link>
             <Nav.Link href="/AboutUs">About Us</Nav.Link>
           </Nav>
