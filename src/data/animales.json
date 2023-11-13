@@ -1,0 +1,32 @@
+[
+    {
+        "key":"1",
+        "nombreEsp":"cebra",
+        "nombreIng":"Zebra"
+    },
+    {
+        "key":"2",
+        "nombreEsp":"gato",
+        "nombreIng":"cat"
+    },
+    {
+        "key":"3",
+        "nombreEsp":"jirafa",
+        "nombreIng":"giraffe"
+    },
+    {
+        "key":"4",
+        "nombreEsp":"leon",
+        "nombreIng":"lion"
+    },
+    {
+        "key":"5",
+        "nombreEsp":"perro",
+        "nombreIng":"dog"
+    },
+    {
+        "key":"6",
+        "nombreEsp":"vaca",
+        "nombreIng":"cow"
+    }
+]

@@ -8,8 +8,9 @@ import Footer from "./components/Footer/Footer";
 // import AppJuegoDude from "./components/JuegoDude/AppJuegoDude";
 // import AppJuegoNave from "./components/JuegoNave/AppJuegoNave";
 // import AppListaDeTareas from "./components/ListaDeTareas/AppListaDeTareas";
-// import AppJuegoImagenes from "./components/JuegoImagenes/AppJuegoImagenes";
+import AppJuegoImagenes from "./components/JuegoImagenes/AppJuegoImagenes";
 import "./app.css";
+import OurProjects from "./components/OurProjects/OurProjects";
 
 
 function App(){
@@ -21,8 +22,9 @@ function App(){
                 {/* <Route path="/Comparador" element={<AppComparadorPrecios></AppComparadorPrecios>}></Route>
                 <Route path="/Dude" element={<AppJuegoDude></AppJuegoDude>}></Route>
                 <Route path="/Nave" element={<AppJuegoNave></AppJuegoNave>}></Route>
-                <Route path="/Tareas" element={<AppListaDeTareas></AppListaDeTareas>}></Route>
-                <Route path="/JuegoImagenes" element={<AppJuegoImagenes></AppJuegoImagenes>}></Route> */}
+                <Route path="/Tareas" element={<AppListaDeTareas></AppListaDeTareas>}></Route>*/}
+                <Route path="/JuegoImagenes" element={<AppJuegoImagenes></AppJuegoImagenes>}></Route>
+                <Route path="/Proyectos" element={<OurProjects></OurProjects>}></Route>
                 <Route path="/AboutUs" element={<AboutUs></AboutUs>}></Route>
                 <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
             </Routes>
