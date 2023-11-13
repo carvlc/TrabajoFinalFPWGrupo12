@@ -8,7 +8,7 @@ function Footer() {
                 <div className="footer-links">
                     <h4>Integrantes</h4>        
                     <ul>
-                        <li><a href="https://github.com/cesarbanzan">Banzan Cèsar Emilio</a></li>
+                        <li><a href="https://github.com/cesarbanzan">Banzan César Emilio</a></li>
                         <li><a href="https://github.com/Joaset">Torres Flores Joaquin Victor</a></li>
                         <li><a href="https://github.com/carvlc">Vilca Carlos Norberto Salvador</a></li>
                     </ul>
