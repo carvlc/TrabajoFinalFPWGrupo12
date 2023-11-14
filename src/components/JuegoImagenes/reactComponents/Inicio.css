@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.grid {
+.gridImagenes {
     width: 85vw;
     margin: 0 auto;
     display: grid;

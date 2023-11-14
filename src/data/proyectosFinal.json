@@ -1,27 +1,27 @@
 [
     {
-        "img" :"",
+        "img" :"./img/coverComparador.PNG",
         "nombre": "Comparador de Precios",
         "descripcion": "Proyecto 02 js",
         "enlace" : "/Comparador"
     },
 
     {
-        "img" :"",
+        "img" :"./img/coverDude.PNG",
         "nombre": "Dude",
         "descripcion": "Proyecto 01 Phaser",
         "enlace" : "/Dude"
     },
     
     {
-        "img" :"",
+        "img" :"./img/coverBattleSpace.PNG",
         "nombre": "Battle Space",
         "descripcion": "Proyecto 02 Phaser",
         "enlace" : "/Nave"
     },
 
     {
-        "img" :"",
+        "img" :"./img/listas.PNG",
         "nombre": "Lista de Notas",
         "descripcion": "Proyecto 01 React",
         "enlace" : "/Tareas"
