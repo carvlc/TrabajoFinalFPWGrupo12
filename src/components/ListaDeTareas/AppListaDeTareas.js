@@ -1,6 +1,8 @@
+import Notas from "./reactComponents/Notas";
+
 function AppListaDeTareas(){
     return(
-        <h1>Aqui va la app de lista de tareas</h1>
+        <Notas></Notas>
     )
 }
 

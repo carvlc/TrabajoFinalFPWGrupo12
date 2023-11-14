@@ -70,7 +70,7 @@ function Inicio() {
     } else if (mostrarFelicitaciones) {
         return (
             <>
-                <div className='grid'>{jugadores.map((jugador) => (
+                <div className='gridImagenes'>{jugadores.map((jugador) => (
                     <Felicitaciones
                         key={jugador.nombreJugador}
                         nombreJugador={jugador.nombreJugador}
