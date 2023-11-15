@@ -1,8 +1,9 @@
+import "./proyectos.css";
 import { Card, Button } from "react-bootstrap";
 
 function Proyecto(props) {
     return(
-        <Card style={{ width: '18rem' }}>
+        <Card className= "cardProyectos" style={{ width: '18rem' }}>
                     <Card.Img variant="top" src= {props.img} />
                     <Card.Body>
                         <Card.Title>{props.nombre}</Card.Title>
