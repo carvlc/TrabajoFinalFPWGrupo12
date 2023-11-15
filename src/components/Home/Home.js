@@ -2,6 +2,8 @@ import './home.css'
 import Proyectos from '../Proyectos/Proyectos';
 import { Row } from 'react-bootstrap';
 import proyectos from '../../data/proyectosFinal.json'
+import Footer from '../Footer/Footer';
+import AboutUs from '../AboutUs/AboutUs';
 
 function Home() {
     return (
@@ -25,7 +27,9 @@ function Home() {
 
             <div>
                 <h2>AboutUs</h2>
+                <AboutUs></AboutUs>
             </div>
+            <Footer></Footer>
         </div>
     )
 }
