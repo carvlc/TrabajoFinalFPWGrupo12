@@ -8,9 +8,10 @@ import Nivel1 from "./scenesNave/Nivel1";
 import Nivel2 from "./scenesNave/Nivel2";
 import Nivel3 from "./scenesNave/Nivel3";
 import Win from "./scenesNave/Win";
+import Seleccion from "./scenesNave/Seleccion";
 
 function AppJuegoNave(){
-    const Escenas = [Menu, Nivel1, Nivel2,Nivel3,Boss, GameOver, Win];
+    const Escenas = [Menu,Seleccion, Nivel1, Nivel2,Nivel3,Boss, GameOver, Win];
     const crearEscena = Scene => new Scene();
     const iniciarEscena = () => Escenas.map(crearEscena);
     const [listo, setListo]= useState(false);
