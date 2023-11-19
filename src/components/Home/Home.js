@@ -8,12 +8,16 @@ import AboutUs from '../AboutUs/AboutUs';
 function Home() {
     return (
         <div className='home'>
-            <div style={{ padding: 20 }}>
+            <div id='seccionInicio' className='inicio' style={{ padding: 20 }}>
                 <h1>Grupo 12 FPW</h1>
-                <h2>Hola somos el grupo 12 y este es nuestro trabajo final, esperamos que les guste!!</h2>
+                <div className='contenedorLobo'>
+                    <img src="./img/lobo2.png" className='inicioLogo'></img>
+                </div>
+                <h2 className='holaMundo'>Hola Mundo!! Somos el grupo 12 y este es nuestro trabajo final, esperamos que les guste!!</h2>
             </div>
-            <h2>Proyectos</h2>
-            <Row>
+            {/* <h2>Proyectos</h2> */}
+            <Row id='seccionProyectos' className='proyectos'>
+                <h1>Proyectos</h1>
                 {proyectos.map((proyecto,i) =>
                     <Proyectos
                     key = {i}
@@ -24,9 +28,8 @@ function Home() {
                     </Proyectos>
                 )}
             </Row>
-
-            <div>
-                <h2>AboutUs</h2>
+            <div id='seccionNosotros' className='sobreNosotros'>
+                <h1>AboutUs</h1>
                 <AboutUs></AboutUs>
             </div>
             <Footer></Footer>

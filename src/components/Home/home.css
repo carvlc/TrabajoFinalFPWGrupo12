@@ -2,6 +2,65 @@
     background-color: orange;
 }
 
-h2{
+.holaMundo{
     text-align: center;
+    margin-top: 150px;
+}
+
+h1{
+    text-align: center;
+    padding: 0;
+    padding-top: 75px;
+    padding-bottom: 50px;
+}
+
+.contenedorLobo{
+    display: flex;
+    justify-content: center;
+}
+
+.contenedorLobo img{
+    border: 15px solid black;
+    border-radius: 100%;
+}
+
+.inicio{
+    height: 100vh;
+}
+
+.inicioLogo{
+    width: 60vw;
+}
+
+.row.proyectos{
+    height: auto;
+}
+
+.sobreNosotros{
+    height: auto;
+}
+
+
+@media(min-width: 991px){
+
+    .inicioLogo{
+        width: auto;
+        height: 60vh;
+    }
+
+    .holaMundo{
+        margin-top: 50px;
+    }
+
+    .row.proyectos{
+        height: 100vh;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .sobreNosotros{
+        height: 100vh;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

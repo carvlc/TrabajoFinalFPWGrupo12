@@ -1,0 +1,44 @@
+.nav{
+    background-color: black;
+}
+
+.lobo{
+    margin-right: 20px;
+}
+
+.container.containerNav{
+    margin-left: 0;
+}
+
+#basic-navbar-nav{
+    text-align: center;
+}
+
+.ulLista{
+    display: flex;
+    margin-top: 10px;
+}
+.lista:hover {
+    font-size: 20px;
+}
+
+.lista{
+    transition: all .3s ease;
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+}
+
+@media(max-width: 991px){
+
+    .ulLista{
+        display: block;
+        text-align: left;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .liLista{
+        margin-bottom: 5px;
+    }
+}

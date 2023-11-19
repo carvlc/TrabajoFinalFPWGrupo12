@@ -3,7 +3,20 @@
     color: white;
     border-color: white;
     margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
+    padding: 0;
+}
+
+.card.cardProyectos :hover{
+    background-color: black;
+}
+
+@media(min-width: 991px){
+
+    .card.cardProyectos{
+        margin-top: 100px;
+        margin-bottom: 350px;
+    }
 }

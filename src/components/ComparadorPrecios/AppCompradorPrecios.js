@@ -1,8 +1,9 @@
 import ComparadorPrecios from "./reactComponents/ComparadorPrecios";
+
 function AppComparadorPrecios(){
     return(
         <>
-        <ComparadorPrecios></ComparadorPrecios>
+        <ComparadorPrecios className='appPrecio'></ComparadorPrecios>
         </>
     )
 }
