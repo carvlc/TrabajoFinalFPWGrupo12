@@ -1,14 +1,21 @@
-body {
-    /* display: flex; */
+/* body {
+    display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 .gridImagenes {
-    width: 85vw;
+    height: 100vh;
+    width: auto;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 20px;
+    margin-top: 50px;
+}
+.ganador{
+    padding-bottom: 100px;
+    padding-top: 50px;
+    margin: 0;
 }
 .my-container {
     display: flex;
@@ -57,4 +64,20 @@ body {
 
 .btn-play:hover {
     background-color: #64be5b;
+}
+
+@media(min-width: 991px){
+
+    .gridImagenes {
+        width: 60vw;
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 0;
+    }
+
+    .ganador{
+        padding-bottom: 100px;
+        padding-top: 0px;
+        margin: 0;
+    }
 }

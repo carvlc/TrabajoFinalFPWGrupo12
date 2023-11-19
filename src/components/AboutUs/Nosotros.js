@@ -10,7 +10,9 @@ function Nosotros(props) {
                     <Card.Text>
                         {props.sobreMi}
                     </Card.Text>
-                    <Button variant="primary" href={props.gitHub}>GitHub</Button>
+                    <div className="link">
+                        <a href={props.gitHub}><i className="bi bi-github"></i></a>
+                    </div>
                 </Card.Body>
             </Card>
     )

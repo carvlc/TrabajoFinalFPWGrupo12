@@ -1,21 +1,21 @@
 [
     {
         "key":1,
-        "image":"",
+        "image":"./img/cesar.png",
         "nombreCompleto":"Banzan, Cesar Emilio",
-        "sobreMi":"messi del grupo",
+        "sobreMi":"Messi del grupo",
         "gitHub":"https://github.com/cesarbanzan?tab=repositories"
     },
     {
         "key":2,
-        "image":"",
+        "image":"./img/lu.PNG",
         "nombreCompleto":"Torres Flores, Joaquin Victor",
         "sobreMi":"Suarez del grupo",
         "gitHub":"https://github.com/Joaset?tab=repositories"
     },
     {
         "key":3,
-        "image":"",
+        "image":"./img/carlos.PNG",
         "nombreCompleto":"Vilca, Carlos Norberto Salvador",
         "sobreMi":"Neymar del grupo",
         "gitHub":"https://github.com/carvlc?tab=repositories"
