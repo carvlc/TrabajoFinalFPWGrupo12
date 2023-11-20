@@ -78,11 +78,12 @@ function Inicio() {
                         rondasTotales={jugador.rondasTotales}
                     />
                 ))}
-                </div>
                 {
                     jugadores[0].puntaje > jugadores[1].puntaje ?
                     <h1 className='ganador'> Winner {jugadores[0].nombreJugador}</h1> : jugadores[0].puntaje < jugadores[1].puntaje ? <h1 className='ganador'> Winner {jugadores[1].nombreJugador}</h1> : <h1 className='ganador'>Tie</h1>
                 }
+                </div>
+                
             </>
 
         );

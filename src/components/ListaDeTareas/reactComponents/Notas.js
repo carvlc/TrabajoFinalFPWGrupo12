@@ -19,19 +19,19 @@ function Notas() {
     }, [isChange])
 
     const agregarNota = () => {
-        if (titulo !== '' || texto !== '') {
-           const objetoNota = {
-            titulo: titulo,
-            texto: texto,
-            estado: 'Inicial'
-        }
-        setNotas([...notas, objetoNota]);
-        setTitulo('')
-        setTexto('') 
-        }else{
+        if (titulo === '' || texto === '') {
             alert("DEBE COMPLETAR AMBOS CAMPOS");
+        } else {
+            const objetoNota = {
+                titulo: titulo,
+                texto: texto,
+                estado: 'Inicial'
+            }
+            setNotas([...notas, objetoNota]);
+            setTitulo('')
+            setTexto('')
         }
-        
+
 
     }
 
