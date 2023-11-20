@@ -1,34 +1,34 @@
 [
     {
-        "img" :"./img/coverComparador.PNG",
+        "img" :"./img/precioCard.png",
         "nombre": "Comparador de Precios",
         "descripcion": "Proyecto 02 js",
         "enlace" : "/Comparador"
     },
 
     {
-        "img" :"./img/coverDude.PNG",
+        "img" :"./img/dudeCard.png",
         "nombre": "Dude",
         "descripcion": "Proyecto 01 Phaser",
         "enlace" : "/Dude"
     },
     
     {
-        "img" :"./img/coverBattleSpace.PNG",
+        "img" :"./img/naveCard.png",
         "nombre": "Battle Space",
         "descripcion": "Proyecto 02 Phaser",
         "enlace" : "/Nave"
     },
 
     {
-        "img" :"./img/listas.PNG",
+        "img" :"./img/notasCard.png",
         "nombre": "Lista de Notas",
         "descripcion": "Proyecto 01 React",
         "enlace" : "/Tareas"
     },
 
     {
-        "img" :"./img/gato.PNG",
+        "img" :"./img/niñosCard.png",
         "nombre": "Juego de Niños",
         "descripcion": "Proyecto 02 React",
         "enlace" : "/JuegoImagenes"

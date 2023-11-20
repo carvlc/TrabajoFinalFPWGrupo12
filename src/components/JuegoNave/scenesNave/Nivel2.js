@@ -16,12 +16,14 @@ class Nivel2 extends Phaser.Scene {
         this.load.image('space', './img/space3.png');
         this.load.image('enemy', './img/enemy.png');
         this.load.image('shoot', './img/shoot.png');
+        this.load.image('misil', '/img/item.png')
         this.load.spritesheet('nave', './img/nave.png', { frameWidth: 70, frameHeight: 62 });
         this.load.spritesheet('sega', './img/nave4.png', { frameWidth: 60, frameHeight: 56 });
         this.load.image('pared', './img/pipe.png')
         this.load.audio('laser', './sound/blaster.mp3');
         this.load.audio('muerteEnemigo', './sound/alien_death.wav');
         this.load.audio('muerte', './sound/player_death.wav');
+        this.load.audio('recarga', './sound/recarga.mp3');
         this.load.image('white', './img/white.png');
         this.load.spritesheet('meteoro', './img/meteo.png',{ frameWidth : 34.1, frameHeight: 34});
     }
@@ -227,27 +229,6 @@ class Nivel2 extends Phaser.Scene {
             
         }
 
-        // if (this.cursors.left.isDown) {
-        //     this.player.setVelocityX(-400);
-        //     this.player.anims.play('izquierda');
-        // }
-        // else if (this.cursors.right.isDown) {
-        //     this.player.setVelocityX(400);
-        //     this.player.anims.play('derecha');
-        // }
-        // else if (this.cursors.up.isDown) {
-        //     this.player.setVelocityY(-500);
-        //     this.player.anims.play('arriba')
-        // }
-        // else if (this.cursors.down.isDown) {
-        //     this.player.setVelocityY(500)
-        //     this.player.anims.play('abajo')
-        // }
-        // else {
-        //     this.player.setVelocityY(0);
-        //     this.player.setVelocityX(0);
-        //     this.player.anims.play('quieto', true)
-        // }
         this.input.keyboard.on('keydown', (event) => {
             if (event.keyCode == 32 && this.reload) {
                 this.disparar();
@@ -263,7 +244,7 @@ class Nivel2 extends Phaser.Scene {
         this.reload = false;
         if (!this.addreload) {
             this.time.addEvent({
-                delay: 700,
+                delay: 500,
                 callback: () => {
                     this.reload = true;
                 },
@@ -303,7 +284,7 @@ class Nivel2 extends Phaser.Scene {
         for (let i = 0; i < 1; i++) {
             let enemyPosicionAltura = Phaser.Math.Between(31, 569);
             this.enemy = this.physics.add.sprite(enemyDistanciaHorizontal, enemyPosicionAltura, 'enemy');
-            this.enemy.body.velocity.x = -200;
+            this.enemy.body.velocity.x = -300;
             
             this.physics.add.overlap(this.player, this.enemy, this.hitenemy, null, this);
             this.physics.add.collider(this.enemy,this.balas,this.hitbullet, null, this);
@@ -403,18 +384,20 @@ class Nivel2 extends Phaser.Scene {
         }
         if(contPower>90 &&    this.doubleCheck == false){
             this.doubleCheck = true;
-            this.doubleShotParticles = this.add.particles(0, 0, 'item', {
+            this.doubleShotParticles = this.add.particles(0, 0, 'misil', {
                 speed: 100,
-                scale: { start: 1, end: 0 },
+                scale: { start: 0.25, end: 0 },
                 blendMode: 'ADD',
             })
-            this.doubleShot = this.physics.add.sprite(600, 400, 'item').setVelocity(150, 200).setCollideWorldBounds(true, 1, 1, true).setScale();
+            this.doubleShot = this.physics.add.sprite(600, 400, 'misil').setVelocity(150, 200).setCollideWorldBounds(true, 1, 1, true).setScale(0.25);
             this.doubleShotParticles.startFollow(this.doubleShot);
         }
     }
     
     obtenerDoubleShot(){
         console.log('double shot agarrado');
+        this.misil = this.sound.add('recarga', {volume: 0.5});
+        this.misil.play();
         this.doubleShot.destroy();
         this.doubleShotParticles.destroy();
         this.disparoDoble=true;
