@@ -97,7 +97,7 @@ function Juego({ nombreJugador, puntaje, setPuntaje, alTerminar, rondaActual, se
             {esCorrecto === true && <p>¡Correct!</p>}
             {esCorrecto === false && <p>¡Incorrect!</p>}
             <button className='btn-siguiente' onClick={siguienteRonda}>Next</button>
-            {!comodin? <button className='btn-comodin' onClick={usarComodin}>Usar Comodin</button>: <></>}
+            {!comodin? <button className='btn-comodin' onClick={usarComodin}>Use Help!</button>: <></>}
             
         </div>
     );

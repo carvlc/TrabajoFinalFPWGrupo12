@@ -19,7 +19,9 @@ function ComparadorPrecios() {
     }, [])
 
     function guardarDatos() {
-        if (nombreComercio !== '' || nombreProducto !== '' || precioProducto !== 0) {
+        if (nombreComercio === '' || nombreProducto === '' || precioProducto === 0) {
+            alert('debe completar todos los campos!!')
+        } else {
             let producto = {
                 nombreProducto: nombreProducto,
                 precioProducto: precioProducto,
@@ -30,8 +32,6 @@ function ComparadorPrecios() {
             setPrecioProducto(0);
             setNombreComercio('');
             setNombreProducto('');
-        } else {
-            alert('debe completar todos los campos!!')
         }
 
 
