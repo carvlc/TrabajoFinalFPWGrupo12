@@ -2,7 +2,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 
-
+// Este componente contiene la estructura de la nota.
+// cuenta con un boton para cambiar el estado de la nota (Inicial, En proceso, Resuelto).
+// y un boton para borrar la nota.
 function Nota({clave, titulo, texto,estado, borrarNota,cambiarEstado}) {
   return (
     <Card key={clave} border='info' >

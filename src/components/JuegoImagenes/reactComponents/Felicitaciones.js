@@ -1,6 +1,8 @@
 import React from 'react';
 import './Felicitaciones.css'
 
+// componente funcional que devuelve el mensaje de felicitaciones para un jugador
+// recibe mediante props: el nombreJugador, puntaje y rondastotales y los muestra 
 function Felicitaciones({ nombreJugador, puntaje, rondasTotales }) {
     return (
         <div className='contenedor'>
