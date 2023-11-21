@@ -21,7 +21,6 @@ class Win extends Phaser.Scene{
             loop:false
         }
         this.sonido.play(soundConfig);
-        console.log("ganaste");
         this.startButton = this.add.image(400,300,"fondoWin").setInteractive();
         this.startButton.on("pointerdown",()=>{
             this.sonido.stop(soundConfig);

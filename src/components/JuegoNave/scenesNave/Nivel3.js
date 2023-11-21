@@ -481,9 +481,8 @@ class Nivel3 extends Phaser.Scene {
             this.doubleShotParticles.startFollow(this.doubleShot);
         }
     }
-    
+    // metodo de soble disparo
     obtenerDoubleShot(){
-        console.log('double shot agarrado');
         this.misil = this.sound.add('recarga', {volume: 0.5});
         this.misil.play();
         this.doubleShot.destroy();

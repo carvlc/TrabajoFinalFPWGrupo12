@@ -67,7 +67,6 @@ class Boss extends Phaser.Scene {
         this.enemy = this.physics.add.sprite(400, 128, 'boss', 0);
         this.enemy.setBodySize(100, 100);
         this.enemy.state=200;
-        console.log(this.numJugador);
 
         this.enemyMoving = this.tweens.add({
             targets: this.enemy.body.velocity,
@@ -314,27 +313,7 @@ class Boss extends Phaser.Scene {
             }
         }
 
-        // if (this.cursors.left.isDown) {
-        //     this.player.setVelocityX(-400);
-        //     this.player.anims.play('izquierda1');
-        // }
-        // else if (this.cursors.right.isDown) {
-        //     this.player.setVelocityX(400);
-        //     this.player.anims.play('derecha1');
-        // }
-        // else if (this.cursors.up.isDown) {
-        //     this.player.setVelocityY(-500);
-        //     this.player.anims.play('arriba1')
-        // }
-        // else if (this.cursors.down.isDown) {
-        //     this.player.setVelocityY(500)
-        //     this.player.anims.play('abajo1')
-        // }
-        // else {
-        //     this.player.setVelocityY(0);
-        //     this.player.setVelocityX(0);
-        //     this.player.anims.play('quieto1', true)
-        // }
+        
         this.input.keyboard.on('keydown', (event) => {
             if (event.keyCode == 32 && this.reload) {
                 this.disparar();

@@ -15,7 +15,6 @@ function Home() {
                 </div>
                 <h2 className='holaMundo'>Hola Mundo!! Somos el grupo 12 y este es nuestro trabajo final, esperamos que les guste!!</h2>
             </div>
-            {/* <h2>Proyectos</h2> */}
             <Row id='seccionProyectos' className='proyectos'>
                 <h1>Proyectos</h1>
                 {proyectos.map((proyecto,i) =>

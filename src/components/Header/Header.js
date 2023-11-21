@@ -16,11 +16,6 @@ function Header() {
             />Grupo 12</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          {/* <Nav className="me-auto">
-            <Nav.Link href="/">Inicio</Nav.Link>
-            <Nav.Link href="/Proyectos">Proyectos</Nav.Link>
-            <Nav.Link href="/AboutUs">About Us</Nav.Link>
-          </Nav> */}
           <ul className='ulLista'>
             <li className='liLista'>
               <a className='lista' href="/">Inicio</a>

@@ -51,7 +51,6 @@ class Nivel1 extends Phaser.Scene {
         this.balas = this.physics.add.group();
         this.bala;
         this.doubleCheck=false;
-        console.log(this.numJugador);
 
         this.skyline = this.add.blitter(0, 0, 'sky');
         this.skyline.create(0, 0);
@@ -341,9 +340,8 @@ class Nivel1 extends Phaser.Scene {
         }
 
     }
-
+    // metodo de doble disparo
     obtenerDoubleShot(){
-        console.log('double shot agarrado');
         this.misil = this.sound.add('recarga', {volume: 0.5});
         this.misil.play();
         this.doubleShot.destroy();
@@ -359,6 +357,7 @@ class Nivel1 extends Phaser.Scene {
             repeat:0 
         })
     }
+    // metodo para obtener el powerUp de vida 
     obtenerPowerup() {
         this.vida += 100;
         this.vidaJugador = this.sound.add('vida', {volume: 0.1});

@@ -35,7 +35,6 @@ class Nivel2 extends Phaser.Scene {
         this.bala;
         this.disparoDoble = false;
         this.add.image(400, 300, 'space');
-        console.log(this.numJugador);
 
         this.skyline = this.add.blitter(0, 0, 'space');
         this.skyline.create(0, 0);
@@ -393,9 +392,8 @@ class Nivel2 extends Phaser.Scene {
             this.doubleShotParticles.startFollow(this.doubleShot);
         }
     }
-    
+    // metodo de doble disparo
     obtenerDoubleShot(){
-        console.log('double shot agarrado');
         this.misil = this.sound.add('recarga', {volume: 0.5});
         this.misil.play();
         this.doubleShot.destroy();

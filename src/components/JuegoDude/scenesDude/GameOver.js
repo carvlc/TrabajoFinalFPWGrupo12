@@ -14,7 +14,6 @@ class GameOver extends Phaser.Scene{
       
     }
     create(){
-        console.log("perdiste");
         this.sonido= this.sound.add("sonido");
         const soundConfig={
             volume:1,

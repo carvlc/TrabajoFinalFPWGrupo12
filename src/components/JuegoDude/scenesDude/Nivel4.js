@@ -101,8 +101,7 @@ class Nivel4 extends Phaser.Scene {
         this.physics.add.collider(this.bombs, this.platforms);
         this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
 
-        let x = (this.player.x < 400) ? Phaser.Math.Between(400, 800) :
-            Phaser.Math.Between(0, 400);
+        let x = (this.player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
         let bomb = this.bombs.create(x, 10, 'bomb');
         let bomb1 = this.bombs.create(x, 250, 'bomb');
         let bomb2 = this.bombs.create(x, 450, 'bomb');
