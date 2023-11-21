@@ -20,12 +20,14 @@ class Nivel3 extends Phaser.Scene {
         this.load.image('shootenemy', './img/shootEnemy.png')
         this.load.image('pared', './img/pipe.png')
         this.load.image('white','./img/white.png')
+        this.load.image('misil', '/img/item.png')
         this.load.spritesheet('sega', './img/nave4.png', { frameWidth: 60, frameHeight: 56 })
         this.load.spritesheet('nave', './img/nave.png', { frameWidth: 70, frameHeight: 62 });
         this.load.audio('laser', './sound/blaster.mp3');
         this.load.audio('muerteEnemigo', './sound/alien_death.wav');
         this.load.audio('muerte', './sound/player_death.wav');
         this.load.audio('vida', './sound/vida.mp3');
+        this.load.audio('recarga', './sound/recarga.mp3');
     }
 
     create() {
@@ -207,27 +209,6 @@ class Nivel3 extends Phaser.Scene {
             }   
         }
 
-        // if (this.cursors.left.isDown) {
-        //     this.player.setVelocityX(-400);
-        //     this.player.anims.play('turn');
-        // }
-        // else if (this.cursors.right.isDown) {
-        //     this.player.setVelocityX(400);
-        //     this.player.anims.play('turn');
-        // }
-        // else if (this.cursors.up.isDown) {
-        //     this.player.setVelocityY(-500);
-        //     this.player.anims.play('up')
-        // }
-        // else if (this.cursors.down.isDown) {
-        //     this.player.setVelocityY(500)
-        //     this.player.anims.play('down')
-        // }
-        // else {
-        //     this.player.setVelocityY(0);
-        //     this.player.setVelocityX(0);
-        //     this.player.anims.play('turn', true)
-        // }
         // cuando se pulse la tecla 32(espacio) el bird da n salto hacia arriba
         this.input.keyboard.on('keydown', (event) => {
             if (event.keyCode == 32 && this.reload) {
@@ -458,12 +439,12 @@ class Nivel3 extends Phaser.Scene {
         }
         if(contPower>90 &&  this.doubleCheck == false){
             this.doubleCheck = true;
-            this.doubleShotParticles = this.add.particles(0, 0, 'item', {
+            this.doubleShotParticles = this.add.particles(0, 0, 'misil', {
                 speed: 100,
-                scale: { start: 1, end: 0 },
+                scale: { start: 0.25, end: 0 },
                 blendMode: 'ADD',
             })
-            this.doubleShot = this.physics.add.sprite(600, 400, 'item').setVelocity(150, 200).setCollideWorldBounds(true, 1, 1, true).setScale();
+            this.doubleShot = this.physics.add.sprite(600, 400, 'misil').setVelocity(150, 200).setCollideWorldBounds(true, 1, 1, true).setScale(0.25);
             this.doubleShotParticles.startFollow(this.doubleShot);
         }
     }
@@ -491,18 +472,20 @@ class Nivel3 extends Phaser.Scene {
         }
         if(contPower>90 &&  this.doubleCheck == false){
             this.doubleCheck = true;
-            this.doubleShotParticles = this.add.particles(0, 0, 'item', {
+            this.doubleShotParticles = this.add.particles(0, 0, 'misil', {
                 speed: 100,
-                scale: { start: 1, end: 0 },
+                scale: { start: 0.25, end: 0 },
                 blendMode: 'ADD',
             })
-            this.doubleShot = this.physics.add.sprite(600, 400, 'item').setVelocity(150, 200).setCollideWorldBounds(true, 1, 1, true).setScale();
+            this.doubleShot = this.physics.add.sprite(600, 400, 'misil').setVelocity(150, 200).setCollideWorldBounds(true, 1, 1, true).setScale(0.25);
             this.doubleShotParticles.startFollow(this.doubleShot);
         }
     }
     
     obtenerDoubleShot(){
         console.log('double shot agarrado');
+        this.misil = this.sound.add('recarga', {volume: 0.5});
+        this.misil.play();
         this.doubleShot.destroy();
         this.doubleShotParticles.destroy();
         this.disparoDoble=true;

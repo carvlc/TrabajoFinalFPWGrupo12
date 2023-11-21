@@ -17,6 +17,7 @@ class Nivel1 extends Phaser.Scene {
         this.load.image('shoot', './img/shoot.png')
         this.load.image('item', './img/shoot4.png')
         this.load.image('pared', './img/pipe.png')
+        this.load.image('misil', '/img/item.png')
         this.load.spritesheet('sega', './img/nave4.png', { frameWidth: 60, frameHeight: 56 })
         this.load.spritesheet('nave', './img/nave.png', { frameWidth: 70, frameHeight: 62 })
         this.load.spritesheet('explosion', './img/explosion.png', { frameWidth: 64, frameHeight: 64 })
@@ -25,6 +26,7 @@ class Nivel1 extends Phaser.Scene {
         this.load.audio('muerteEnemigo', './sound/alien_death.wav');
         this.load.audio('muerte', './sound/player_death.wav');
         this.load.audio('vida', './sound/vida.mp3');
+        this.load.audio('recarga', './sound/recarga.mp3');
     }
 
     create() {
@@ -125,13 +127,6 @@ class Nivel1 extends Phaser.Scene {
             })
         }
 
-        // this.anims.create({
-        //     key: 'explosionAnimacion',
-        //     frames: this.anims.generateFrameNames('explosion', {star: 0, end:24}),
-        //     frameRate: 10,
-        // })
-
-
         // se crean paredes para eliminar elementos fuera del mundo
         this.paredes = this.physics.add.staticGroup();
         this.paredes.create(-100, this.game.config.height / 2, 'pared').setScale(2).refreshBody();
@@ -154,8 +149,6 @@ class Nivel1 extends Phaser.Scene {
         this.physics.add.collider(this.balas, this.paredes, this.outBullet, null, this);
         this.puntajeText = this.add.text(16, 16, 'Puntaje: ' + this.puntaje + '/250', { fontSize: '32px', fill: '#fff' });
         this.vidaText = this.add.text(16, 50, 'Vida: ' + this.vida + '%', { fontSize: '32px', fill: '#fff' });
-        // console.log(this.numJugador);
-
     }
 
     update() {
@@ -213,27 +206,6 @@ class Nivel1 extends Phaser.Scene {
             
         }
 
-        // if (this.cursors.left.isDown) {
-        //     this.player.setVelocityX(-400);
-        //     this.player.anims.play('turn');
-        // }
-        // else if (this.cursors.right.isDown) {
-        //     this.player.setVelocityX(400);
-        //     this.player.anims.play('turn');
-        // }
-        // else if (this.cursors.up.isDown) {
-        //     this.player.setVelocityY(-500);
-        //     this.player.anims.play('up')
-        // }
-        // else if (this.cursors.down.isDown) {
-        //     this.player.setVelocityY(500)
-        //     this.player.anims.play('down')
-        // }
-        // else {
-        //     this.player.setVelocityY(0);
-        //     this.player.setVelocityX(0);
-        //     this.player.anims.play('turn', true)
-        // }
         // cuando se pulse la tecla 32(espacio) la nave dispara
         this.input.keyboard.on('keydown', (event) => {
             if (event.keyCode == 32 && this.reload) {
@@ -252,7 +224,7 @@ class Nivel1 extends Phaser.Scene {
         this.reload = false;
         if (!this.addreload) {
             this.time.addEvent({
-                delay: 700,
+                delay: 500,
                 callback: () => {
                     this.reload = true;
                 },
@@ -328,7 +300,6 @@ class Nivel1 extends Phaser.Scene {
  
 
     hitbullet(enemy, balas) {
-        // console.log("funca");
         let contPower=Phaser.Math.Between(1,100);
         this.puntaje += 10;
         balas.destroy();
@@ -359,12 +330,12 @@ class Nivel1 extends Phaser.Scene {
         }
         if(contPower>90 && this.doubleCheck==false){
             this.doubleCheck=true;
-            this.doubleShotParticles = this.add.particles(0, 0, 'item', {
+            this.doubleShotParticles = this.add.particles(0, 0, 'misil', {
                 speed: 100,
-                scale: { start: 1, end: 0 },
+                scale: { start: 0.25, end: 0 },
                 blendMode: 'ADD',
             })
-            this.doubleShot = this.physics.add.sprite(600, 400, 'item').setVelocity(150, 200).setCollideWorldBounds(true, 1, 1, true).setScale();
+            this.doubleShot = this.physics.add.sprite(600, 400, 'misil').setVelocity(150, 200).setCollideWorldBounds(true, 1, 1, true).setScale(0.25);
             this.doubleShotParticles.startFollow(this.doubleShot);
             this.physics.add.collider(this.player, this.doubleShot, this.obtenerDoubleShot, null, this);
         }
@@ -373,6 +344,8 @@ class Nivel1 extends Phaser.Scene {
 
     obtenerDoubleShot(){
         console.log('double shot agarrado');
+        this.misil = this.sound.add('recarga', {volume: 0.5});
+        this.misil.play();
         this.doubleShot.destroy();
         this.doubleShotParticles.destroy();
         this.disparoDoble=true;

@@ -51,6 +51,16 @@ h1{
     .holaMundo{
         margin-top: 50px;
     }
+    
+    .sobreNosotros{
+        height: 100vh;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 100px;
+    }
+}
+
+@media(min-width: 1450px){
 
     .row.proyectos{
         height: 100vh;
@@ -60,7 +70,7 @@ h1{
 
     .sobreNosotros{
         height: 100vh;
-        margin-left: 0;
-        margin-right: 0;
+        margin-bottom: 100px;
     }
+
 }
