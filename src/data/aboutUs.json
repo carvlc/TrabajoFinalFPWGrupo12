@@ -3,21 +3,21 @@
         "key":1,
         "image":"./img/cesar.png",
         "nombreCompleto":"Banzan, Cesar Emilio",
-        "sobreMi":"Messi del grupo",
+        "sobreMi":"Soy estudiante de la tecnicatura universitaria en diseño integral de videojuegos. Me destacon en programacion y en desarrolo de mecanicas de juegos, Messi del grupo",
         "gitHub":"https://github.com/cesarbanzan?tab=repositories"
     },
     {
         "key":2,
         "image":"./img/lu.PNG",
         "nombreCompleto":"Torres Flores, Joaquin Victor",
-        "sobreMi":"Suarez del grupo",
+        "sobreMi":"Me destaco más en Front y es mi primer año programando, me gusta ir al cine comer pizza. Mis videojuegos favoritos son saga half life y warcraft. Suarez del grupo",
         "gitHub":"https://github.com/Joaset?tab=repositories"
     },
     {
         "key":3,
         "image":"./img/carlos.PNG",
         "nombreCompleto":"Vilca, Carlos Norberto Salvador",
-        "sobreMi":"Neymar del grupo",
+        "sobreMi":"Aficionado a los videojuegos desde siempre, me gusta la programacion y aprender nuevas tecnologias. Me gusta practicar deportes, la musica y el dibujo. Neymar del grupo ",
         "gitHub":"https://github.com/carvlc?tab=repositories"
     }
 
