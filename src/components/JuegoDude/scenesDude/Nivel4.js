@@ -162,7 +162,7 @@ class Nivel4 extends Phaser.Scene {
         }
 
     }
-
+    //metodo para restar el tiempo
     restarTiempo() {
         this.tiempo--;
         this.timeText.setText('Tiempo: ' + this.tiempo);
@@ -175,6 +175,7 @@ class Nivel4 extends Phaser.Scene {
         }
     }
 
+    //metodo para recolectar el corazon
     collectObject(player, object) {
         object.disableBody(true, true);
         this.sonido.stop();
