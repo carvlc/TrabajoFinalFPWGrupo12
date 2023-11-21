@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 class Menu extends Phaser.Scene{
 
+    // constructor por defecto
     constructor(){
         super("Menu");
     }
@@ -16,6 +17,7 @@ class Menu extends Phaser.Scene{
 
     create(){
 
+        //se carga el sonido de fondo
         this.sonido = this.sound.add('fondo');
         const soundConfig = {
             volume: 0.3,
@@ -35,44 +37,61 @@ class Menu extends Phaser.Scene{
         this.nave = this.add.image(200, 100, "nave");
         this.sega = this.add.image(600, 400, 'sega');
         this.sega.setFlipX(true);
-        //console.log(this.numJugador);
 
+        //se agrega efecto de pixeleado a la camara
         const pixelated = this.cameras.main.postFX.addPixelate(-1);
 
+        //se agrega un boton interactivo
         const buttonBox = this.add.rectangle(this.sys.scale.width / 2, this.sys.scale.height - 100, 150, 50, 0x000000, 1);
         buttonBox.setInteractive();
+        //se agrega texto al boton
         const buttonText = this.add.text(this.sys.scale.width / 2, this.sys.scale.height - 100, "START").setOrigin(0.5).setColor('#66FFFF').setFontSize(20);
 
-        // Click to change scene
+        // click para cambiar escena
         buttonBox.on('pointerdown', () => {
-            // Transition to next scene
+            // transicion a siguiente escena
             this.add.tween({
+                //objetivo
                 targets: pixelated,
+                //duracion
                 duration: 700,
+                //numero de milisegundos para buscar
                 amount: 40,
+                //cuando se completa
                 onComplete: () => {
+                    //desvanecimiento de la camara
                     this.cameras.main.fadeOut(100);
-                    //this.sonido.stop('fondo');
+                    //cambio de escena
                     this.scene.start('Seleccion',{sonido: this.sonido});
                 }
             })
         });
 
-         // Hover button properties
+         // Hover
+         //cuando el puntero esta encima
          buttonBox.on('pointerover', () => {
+            //le da un relleno determinado al boton
             buttonBox.setFillStyle(0x66FFFF, 1);
+            //cambia el puntero
             this.input.setDefaultCursor('pointer');
+            //establece el color del texto
             buttonText.setColor('#000000');
         });
 
+        //cuando el puntero esta afuera
         buttonBox.on('pointerout', () => {
+             //le da un relleno determinado al boton
             buttonBox.setFillStyle(0x000000, 1);
+            //cambia el puntero al por defecto
             this.input.setDefaultCursor('default');
+            //establece el color del texto
             buttonText.setColor('#66FFFF');
         });
 
+        //agrega particulas
         this.flame = this.add.particles(this.nave.x -90, this.nave.y, 'white',
             {
+                //colores de la particulas
                 color: [ 0xfacc22, 0xf89800, 0xf83600, 0x9f0404 ],
                 colorEase: 'quad.out',
                 lifespan: 1000,
@@ -98,11 +117,11 @@ class Menu extends Phaser.Scene{
     }
 
     update(){
-         // Wrap ship
-         this.nave.x = Phaser.Math.Wrap(this.nave.x + 1, 1,this.sys.scale.width+70);
-         this.flame.setPosition(this.nave.x -25, this.nave.y);
-         this.sega.x = Phaser.Math.Wrap(this.sega.x - 1, -70,this.sys.scale.width+1);
-         this.flame2.setPosition(this.sega.x +25, this.sega.y);
+
+        this.nave.x = Phaser.Math.Wrap(this.nave.x + 1, 1,this.sys.scale.width+70);
+        this.flame.setPosition(this.nave.x -25, this.nave.y);
+        this.sega.x = Phaser.Math.Wrap(this.sega.x - 1, -70,this.sys.scale.width+1);
+        this.flame2.setPosition(this.sega.x +25, this.sega.y);
     }
 
 }

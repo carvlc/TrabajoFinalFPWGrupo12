@@ -1,6 +1,5 @@
 import Phaser from "phaser";
 import {useState,useEffect} from "react";
-
 import GameOver from "./scenesNave/GameOver";
 import Boss from "./scenesNave/Boss";
 import Menu from "./scenesNave/Menu";
@@ -16,6 +15,8 @@ function AppJuegoNave(){
     const iniciarEscena = () => Escenas.map(crearEscena);
     const [listo, setListo]= useState(false);
     useEffect(()=>{
+
+        //variable para la configuracion del juego
         let config = {
             type: Phaser.AUTO,
             width: 800,
