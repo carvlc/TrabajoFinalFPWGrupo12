@@ -92,7 +92,7 @@ function Notas() {
                                 cambiarEstado={cambiarEstado}
                             ></Nota>
                             :
-                            <p key={indice}></p>
+                            <></>
 
                     ))}
                 </div>
@@ -110,7 +110,7 @@ function Notas() {
                                 cambiarEstado={cambiarEstado}
                             ></Nota>
                             :
-                            <p key={indice}></p>
+                            <></>
 
                     ))}
                 </div>
@@ -129,7 +129,7 @@ function Notas() {
                                 cambiarEstado={cambiarEstado}
                             ></Nota>
                             :
-                            <p key={indice}></p>
+                            <></>
 
                     ))}
                 </div>
